@@ -29,8 +29,8 @@
 
       background:
         linear-gradient(
-          rgba(15, 12, 29, 0.45),
-          rgba(15, 12, 29, 0.65)
+          rgba(15, 12, 29, 0.52),
+          rgba(15, 12, 29, 0.75)
         ),
         url('https://www.nasa.gov/wp-content/uploads/2026/07/eclipse-coverage-advisory-july-29.jpg')
         center / cover no-repeat fixed;
@@ -60,15 +60,27 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 30px;
+      gap: 26px;
       margin: 40px 0;
     }
 
     .hero h1 {
-      font-size: 2.8rem;
-      font-weight: 400;
+      font-family: 'Cinzel', serif;
+      font-size: 3.2rem;
+      font-weight: 600;
       line-height: 1.2;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
+
+      text-shadow:
+        0 0 12px rgba(255, 255, 255, 0.2),
+        0 0 30px rgba(158, 86, 255, 0.4);
+    }
+
+    .hero-tagline {
+      max-width: 650px;
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.9);
     }
 
     .button-group {
@@ -81,7 +93,7 @@
 
     .main-btn {
       display: inline-block;
-      min-width: 210px;
+      min-width: 220px;
       padding: 16px 34px;
 
       font-family: 'Playfair Display', Georgia, serif;
@@ -95,7 +107,8 @@
         background-color 0.3s,
         color 0.3s,
         transform 0.3s,
-        border-color 0.3s;
+        border-color 0.3s,
+        box-shadow 0.3s;
 
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     }
@@ -108,7 +121,8 @@
 
     .subscribe-btn:hover {
       background-color: #f0f0f0;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(255, 255, 255, 0.22);
     }
 
     .trailer-btn {
@@ -121,7 +135,7 @@
     .trailer-btn:hover {
       background-color: rgba(255, 255, 255, 0.15);
       border-color: #ffffff;
-      transform: translateY(-2px);
+      transform: translateY(-3px);
     }
 
     .play-icon {
@@ -130,20 +144,20 @@
       font-size: 0.95em;
     }
 
-    .features {
+    .section-card {
       width: 100%;
       max-width: 900px;
-      margin: 20px 0 45px;
+      margin: 20px 0;
       padding: 32px 24px;
 
-      background: rgba(15, 12, 29, 0.48);
+      background: rgba(15, 12, 29, 0.52);
       border: 1px solid rgba(255, 255, 255, 0.28);
       backdrop-filter: blur(10px);
 
       box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
     }
 
-    .features h2 {
+    .section-card h2 {
       margin-bottom: 24px;
 
       font-family: 'Cinzel', serif;
@@ -151,6 +165,15 @@
       font-weight: 600;
       letter-spacing: 3px;
       text-transform: uppercase;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      margin: -8px auto 24px;
+
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.88);
     }
 
     .feature-grid {
@@ -197,13 +220,114 @@
       vertical-align: middle;
     }
 
+    .founder-section {
+      border-color: rgba(210, 154, 255, 0.55);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(83, 32, 125, 0.62),
+          rgba(15, 12, 29, 0.62)
+        );
+
+      box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(145, 74, 220, 0.12);
+    }
+
+    .limited-badge {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 7px 14px;
+
+      font-family: 'Cinzel', serif;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      color: #ffffff;
+      background: rgba(164, 75, 236, 0.48);
+      border: 1px solid rgba(232, 192, 255, 0.58);
+    }
+
+    .reward-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .reward-item {
+      padding: 22px 16px;
+
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .reward-icon {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.9rem;
+    }
+
+    .reward-title {
+      display: block;
+      margin-bottom: 6px;
+
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .reward-text {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .founder-note {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ead6ff;
+    }
+
+    .launch-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .launch-item {
+      padding: 20px 16px;
+
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .launch-item strong {
+      display: block;
+      margin-bottom: 8px;
+
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .launch-item p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
     .about {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 10px;
 
-      margin: 10px 0 15px;
+      margin: 35px 0 15px;
     }
 
     .about h2 {
@@ -281,7 +405,11 @@
       }
 
       .hero h1 {
-        font-size: 2.2rem;
+        font-size: 2.3rem;
+      }
+
+      .hero-tagline {
+        font-size: 1.05rem;
       }
 
       .header h2 {
@@ -301,15 +429,17 @@
         font-size: 1.08rem;
       }
 
-      .features {
+      .section-card {
         padding: 26px 16px;
       }
 
-      .features h2 {
+      .section-card h2 {
         font-size: 1.4rem;
       }
 
-      .feature-grid {
+      .feature-grid,
+      .reward-grid,
+      .launch-grid {
         grid-template-columns: 1fr;
       }
 
@@ -351,6 +481,11 @@
       Coming August 5th.
     </h1>
 
+    <p class="hero-tagline">
+      Build, explore, survive and become one of the first players
+      to shape the future of Eclipse SMP.
+    </p>
+
     <div class="button-group">
       <a
         href="https://docs.google.com/forms/d/e/1FAIpQLSeMktGZEQY0vDP-XKIlVc9_565DFe7NSVZY7f_Qeys9BbvAFQ/viewform?usp=publish-editor"
@@ -358,7 +493,7 @@
         rel="noopener noreferrer"
         class="main-btn subscribe-btn"
       >
-        Subscribe
+        Join the Waitlist
       </a>
 
       <a
@@ -373,7 +508,7 @@
     </div>
   </main>
 
-  <section class="features">
+  <section class="section-card">
     <h2>Why Join Eclipse SMP?</h2>
 
     <div class="feature-grid">
@@ -388,7 +523,7 @@
       </div>
 
       <div class="feature-item">
-        🧭 Waypoints
+        🧭 Personal Waypoints
       </div>
 
       <div class="feature-item">
@@ -406,6 +541,82 @@
 
       <div class="feature-item">
         📅 Weekly Updates
+      </div>
+
+      <div class="feature-item">
+        🛡️ Optional Safe Mode
+      </div>
+    </div>
+  </section>
+
+  <section class="section-card founder-section">
+    <span class="limited-badge">Limited Launch Reward</span>
+
+    <h2>Become a Founding Player</h2>
+
+    <p class="section-intro">
+      Players who join during the launch period will be recognized as
+      original members of Eclipse SMP.
+    </p>
+
+    <div class="reward-grid">
+      <div class="reward-item">
+        <span class="reward-icon">🏅</span>
+        <strong class="reward-title">Founder Status</strong>
+        <p class="reward-text">
+          Be remembered as one of the first players to join the server.
+        </p>
+      </div>
+
+      <div class="reward-item">
+        <span class="reward-icon">🎁</span>
+        <strong class="reward-title">Launch Gift</strong>
+        <p class="reward-text">
+          Receive a special starter reward when the server opens.
+        </p>
+      </div>
+
+      <div class="reward-item">
+        <span class="reward-icon">🌑</span>
+        <strong class="reward-title">Shape the SMP</strong>
+        <p class="reward-text">
+          Early players can help influence future events and updates.
+        </p>
+      </div>
+    </div>
+
+    <p class="founder-note">
+      Founder rewards will only be available for a limited time after launch.
+    </p>
+  </section>
+
+  <section class="section-card">
+    <h2>Launch Day</h2>
+
+    <p class="section-intro">
+      Join us on August 5th and help begin the first chapter of Eclipse SMP.
+    </p>
+
+    <div class="launch-grid">
+      <div class="launch-item">
+        <strong>🏗️ Build Together</strong>
+        <p>
+          Claim land, create bases and help build the first community areas.
+        </p>
+      </div>
+
+      <div class="launch-item">
+        <strong>🗺️ Explore</strong>
+        <p>
+          Discover the world, locate resources and save your own waypoints.
+        </p>
+      </div>
+
+      <div class="launch-item">
+        <strong>📢 Be There First</strong>
+        <p>
+          Join the opening community before future bosses and events arrive.
+        </p>
       </div>
     </div>
   </section>
