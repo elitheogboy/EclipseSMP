@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -71,29 +72,63 @@
       letter-spacing: 1px;
     }
 
-    .subscribe-btn {
+    .button-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .main-btn {
       display: inline-block;
-
-      background-color: #ffffff;
-      color: #000000;
-      border: none;
-
-      padding: 16px 48px;
+      min-width: 210px;
+      padding: 16px 34px;
 
       font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 600;
 
       cursor: pointer;
       text-decoration: none;
 
-      transition: all 0.3s ease;
+      transition:
+        background-color 0.3s,
+        color 0.3s,
+        transform 0.3s,
+        border-color 0.3s;
+
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .subscribe-btn {
+      background-color: #ffffff;
+      color: #000000;
+      border: 2px solid #ffffff;
     }
 
     .subscribe-btn:hover {
       background-color: #f0f0f0;
       transform: translateY(-2px);
+    }
+
+    .trailer-btn {
+      background-color: rgba(15, 12, 29, 0.45);
+      color: #ffffff;
+      border: 2px solid rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
+    }
+
+    .trailer-btn:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .play-icon {
+      display: inline-block;
+      margin-right: 8px;
+      font-size: 0.95em;
     }
 
     .about {
@@ -187,9 +222,17 @@
         font-size: 1.4rem;
       }
 
-      .subscribe-btn {
-        padding: 14px 36px;
-        font-size: 1.1rem;
+      .button-group {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .main-btn {
+        width: 100%;
+        max-width: 290px;
+        min-width: 0;
+        padding: 14px 24px;
+        font-size: 1.08rem;
       }
 
       .about h2 {
@@ -219,14 +262,26 @@
       Coming August 5th.
     </h1>
 
-    <a
-      href="https://docs.google.com/forms/d/e/1FAIpQLSeMktGZEQY0vDP-XKIlVc9_565DFe7NSVZY7f_Qeys9BbvAFQ/viewform?usp=publish-editor"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="subscribe-btn"
-    >
-      Subscribe
-    </a>
+    <div class="button-group">
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSeMktGZEQY0vDP-XKIlVc9_565DFe7NSVZY7f_Qeys9BbvAFQ/viewform?usp=publish-editor"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="main-btn subscribe-btn"
+      >
+        Subscribe
+      </a>
+
+      <a
+        href="https://youtu.be/XDLFSwYUzhQ"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="main-btn trailer-btn"
+      >
+        <span class="play-icon">▶</span>
+        Watch the Trailer
+      </a>
+    </div>
   </main>
 
   <section class="about">
@@ -315,3 +370,4 @@
 
 </body>
 </html>
+```
