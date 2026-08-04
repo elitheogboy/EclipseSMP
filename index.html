@@ -114,4 +114,828 @@
       align-items: center;
       justify-content: center;
       gap: 16px;
-      flex
+      flex-wrap: wrap;
+    }
+
+    .main-btn {
+      display: inline-block;
+
+      min-width: 220px;
+      padding: 16px 34px;
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size: 1.2rem;
+      font-weight: 600;
+
+      cursor: pointer;
+      text-decoration: none;
+
+      transition:
+        background-color 0.3s,
+        color 0.3s,
+        transform 0.3s,
+        border-color 0.3s,
+        box-shadow 0.3s;
+
+      box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .subscribe-btn {
+      color: #000000;
+      background-color: #ffffff;
+      border: 2px solid #ffffff;
+    }
+
+    .subscribe-btn:hover {
+      background-color: #f0f0f0;
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 8px 24px rgba(255, 255, 255, 0.22);
+    }
+
+    .trailer-btn {
+      color: #ffffff;
+
+      background-color:
+        rgba(15, 12, 29, 0.45);
+
+      border:
+        2px solid rgba(255, 255, 255, 0.75);
+
+      backdrop-filter: blur(8px);
+    }
+
+    .trailer-btn:hover {
+      background-color:
+        rgba(255, 255, 255, 0.15);
+
+      border-color: #ffffff;
+      transform: translateY(-3px);
+    }
+
+    .play-icon {
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    .countdown-box {
+      width: 100%;
+      max-width: 650px;
+      margin-top: 4px;
+      padding: 22px 18px;
+
+      background:
+        rgba(15, 12, 29, 0.62);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.3);
+
+      backdrop-filter: blur(8px);
+
+      box-shadow:
+        0 6px 22px rgba(0, 0, 0, 0.32),
+        0 0 24px rgba(158, 86, 255, 0.15);
+    }
+
+    .countdown-title {
+      margin-bottom: 15px;
+
+      font-family: "Cinzel", serif;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .countdown-unit {
+      min-width: 105px;
+      padding: 14px 10px;
+
+      background:
+        rgba(255, 255, 255, 0.09);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .countdown-unit span {
+      display: block;
+
+      font-family: "Cinzel", serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .countdown-unit small {
+      display: block;
+      margin-top: 4px;
+
+      font-size: 0.72rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      color:
+        rgba(255, 255, 255, 0.78);
+    }
+
+    .launch-time {
+      margin-top: 14px;
+
+      font-size: 0.95rem;
+      color:
+        rgba(255, 255, 255, 0.8);
+    }
+
+    .launch-message {
+      margin-top: 16px;
+
+      font-family: "Cinzel", serif;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      color: #d9b7ff;
+    }
+
+    .section-card {
+      width: 100%;
+      max-width: 900px;
+
+      margin: 20px 0;
+      padding: 32px 24px;
+
+      background:
+        rgba(15, 12, 29, 0.52);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.28);
+
+      backdrop-filter: blur(10px);
+
+      box-shadow:
+        0 8px 28px rgba(0, 0, 0, 0.3);
+    }
+
+    .section-card h2 {
+      margin-bottom: 24px;
+
+      font-family: "Cinzel", serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      margin: -8px auto 24px;
+
+      font-size: 1.08rem;
+      line-height: 1.7;
+
+      color:
+        rgba(255, 255, 255, 0.88);
+    }
+
+    .feature-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+      text-align: left;
+    }
+
+    .feature-item {
+      padding: 15px 18px;
+
+      font-size: 1.08rem;
+      line-height: 1.5;
+
+      background:
+        rgba(255, 255, 255, 0.08);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.18);
+
+      transition:
+        transform 0.3s,
+        background 0.3s,
+        border-color 0.3s;
+    }
+
+    .feature-item:hover {
+      transform: translateY(-2px);
+
+      background:
+        rgba(255, 255, 255, 0.13);
+
+      border-color:
+        rgba(255, 255, 255, 0.35);
+    }
+
+    .upcoming {
+      display: inline-block;
+
+      margin-left: 6px;
+      padding: 2px 8px;
+
+      font-family: "Cinzel", serif;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      color: #ead6ff;
+
+      background:
+        rgba(142, 69, 211, 0.38);
+
+      border:
+        1px solid rgba(217, 174, 255, 0.45);
+    }
+
+    .launch-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 14px;
+    }
+
+    .launch-item {
+      padding: 20px 16px;
+
+      background:
+        rgba(255, 255, 255, 0.08);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .launch-item strong {
+      display: block;
+      margin-bottom: 8px;
+
+      font-family: "Cinzel", serif;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .launch-item p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+
+      color:
+        rgba(255, 255, 255, 0.82);
+    }
+
+    .about {
+      margin: 35px 0 15px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .about h2 {
+      font-family: "Cinzel", serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .notify-count {
+      margin: 10px 0 30px;
+      padding: 12px 24px;
+
+      font-size: 1.15rem;
+      letter-spacing: 1px;
+
+      background:
+        rgba(255, 255, 255, 0.12);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.3);
+
+      backdrop-filter: blur(8px);
+
+      box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .notify-count span {
+      margin-left: 5px;
+
+      font-family: "Cinzel", serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+
+      margin-top: 10px;
+    }
+
+    .social-icon {
+      width: 42px;
+      height: 42px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #ffffff;
+      text-decoration: none;
+
+      border:
+        1px solid rgba(255, 255, 255, 0.4);
+
+      transition:
+        background 0.3s,
+        border-color 0.3s,
+        transform 0.3s;
+    }
+
+    .social-icon:hover {
+      background:
+        rgba(255, 255, 255, 0.15);
+
+      border-color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 35px 15px;
+        background-attachment: scroll;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+
+      .hero-tagline {
+        font-size: 1.05rem;
+      }
+
+      .header h2 {
+        font-size: 1.4rem;
+      }
+
+      .button-group {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .main-btn {
+        width: 100%;
+        max-width: 290px;
+        min-width: 0;
+
+        padding: 14px 24px;
+        font-size: 1.08rem;
+      }
+
+      .countdown-box {
+        padding: 20px 14px;
+      }
+
+      .countdown {
+        display: grid;
+        grid-template-columns:
+          repeat(2, minmax(0, 1fr));
+      }
+
+      .countdown-unit {
+        min-width: 0;
+      }
+
+      .section-card {
+        padding: 26px 16px;
+      }
+
+      .section-card h2 {
+        font-size: 1.4rem;
+      }
+
+      .feature-grid,
+      .launch-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-item {
+        text-align: center;
+        font-size: 1rem;
+      }
+
+      .upcoming {
+        display: block;
+        width: fit-content;
+
+        margin: 7px auto 0;
+      }
+
+      .about h2 {
+        font-size: 1.1rem;
+      }
+
+      .notify-count {
+        padding: 10px 18px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <h2>
+      Minecraft<br>
+      Bedrock
+    </h2>
+  </header>
+
+  <main class="hero">
+    <h1>
+      Eclipse SMP<br>
+      Coming August 5th.
+    </h1>
+
+    <p class="hero-tagline">
+      Build, explore, survive and sign up to be
+      notified when Eclipse SMP officially opens.
+    </p>
+
+    <div class="button-group">
+
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSeMktGZEQY0vDP-XKIlVc9_565DFe7NSVZY7f_Qeys9BbvAFQ/viewform?usp=publish-editor"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="main-btn subscribe-btn"
+      >
+        Join the Waitlist
+      </a>
+
+      <a
+        href="https://youtu.be/XDLFSwYUzhQ"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="main-btn trailer-btn"
+      >
+        <span class="play-icon">▶</span>
+        Watch the Trailer
+      </a>
+
+    </div>
+
+    <div class="countdown-box">
+      <p class="countdown-title">
+        Eclipse SMP launches in:
+      </p>
+
+      <div
+        id="launchCountdown"
+        class="countdown"
+      >
+        <div class="countdown-unit">
+          <span id="days">00</span>
+          <small>Days</small>
+        </div>
+
+        <div class="countdown-unit">
+          <span id="hours">00</span>
+          <small>Hours</small>
+        </div>
+
+        <div class="countdown-unit">
+          <span id="minutes">00</span>
+          <small>Minutes</small>
+        </div>
+
+        <div class="countdown-unit">
+          <span id="seconds">00</span>
+          <small>Seconds</small>
+        </div>
+      </div>
+
+      <p
+        id="launchTime"
+        class="launch-time"
+      >
+        August 5, 2026 at 12:00 PM Eastern Time
+      </p>
+
+      <p
+        id="launchMessage"
+        class="launch-message"
+      ></p>
+    </div>
+  </main>
+
+  <section class="section-card">
+    <h2>Why Join Eclipse SMP?</h2>
+
+    <div class="feature-grid">
+
+      <div class="feature-item">
+        🌑 Dynamic Eclipse Events
+        <span class="upcoming">Upcoming</span>
+      </div>
+
+      <div class="feature-item">
+        👑 Custom Bosses
+        <span class="upcoming">Upcoming</span>
+      </div>
+
+      <div class="feature-item">
+        🧭 Personal Waypoints
+      </div>
+
+      <div class="feature-item">
+        ⚔️ Custom Progression
+      </div>
+
+      <div class="feature-item">
+        🎵 Boss Music
+        <span class="upcoming">Upcoming</span>
+      </div>
+
+      <div class="feature-item">
+        👥 Friendly Community
+      </div>
+
+      <div class="feature-item">
+        📅 Weekly Updates
+      </div>
+
+      <div class="feature-item">
+        🛡️ Optional Safe Mode
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section-card">
+    <h2>Launch Day</h2>
+
+    <p class="section-intro">
+      Join us on August 5th at 12:00 PM Eastern
+      Time and help begin the first chapter of
+      Eclipse SMP.
+    </p>
+
+    <div class="launch-grid">
+
+      <div class="launch-item">
+        <strong>🏗️ Build Together</strong>
+
+        <p>
+          Claim land, create bases and help build
+          the first community areas.
+        </p>
+      </div>
+
+      <div class="launch-item">
+        <strong>🗺️ Explore</strong>
+
+        <p>
+          Discover the world, locate resources
+          and save your own waypoints.
+        </p>
+      </div>
+
+      <div class="launch-item">
+        <strong>📢 Be There First</strong>
+
+        <p>
+          Join the opening community before
+          future bosses and events arrive.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>A Server</h2>
+    <h2>Made By</h2>
+    <h2>Eli &amp; Leah</h2>
+  </section>
+
+  <p class="notify-count">
+    Players Notified:
+
+    <span id="notifyCount">
+      Loading...
+    </span>
+  </p>
+
+  <footer class="social-links">
+
+    <a
+      href="https://x.com/i/status/2084249463279742983"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      aria-label="X"
+    >
+      X
+    </a>
+
+    <a
+      href="https://www.tiktok.com/@developer_eli?_r=1&_t=ZP-98Zi4W31i9P"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      aria-label="TikTok"
+    >
+      ♪
+    </a>
+
+    <a
+      href="https://www.instagram.com/p/Dbk_sOMTgyC/?igsh=Y2xnZWc5ZmFuejl4"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      aria-label="Instagram"
+    >
+      ◎
+    </a>
+
+    <a
+      href="https://youtube.com/@itseli1?si=ac8kkbqfsz8q6LYs"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      aria-label="YouTube"
+    >
+      ▶
+    </a>
+
+  </footer>
+
+  <script>
+    const appScriptUrl =
+      "https://script.google.com/macros/s/AKfycbw6pYnA0U0Srut2k_DyoscIc4qVbkgV3SOvGL2B4hFgq0FzVW_cuLmFzDVCU0GwFbuC/exec";
+
+    const notifyCount =
+      document.getElementById("notifyCount");
+
+    async function loadNotifyCount() {
+      try {
+        const response = await fetch(
+          `${appScriptUrl}?action=count&time=${Date.now()}`
+        );
+
+        if (!response.ok) {
+          throw new Error(
+            `Count failed: ${response.status}`
+          );
+        }
+
+        const data = await response.json();
+
+        notifyCount.textContent =
+          data.count ?? 0;
+      } catch (error) {
+        console.error(
+          "Could not load notified player count:",
+          error
+        );
+
+        notifyCount.textContent =
+          "Unavailable";
+      }
+    }
+
+    loadNotifyCount();
+
+    const launchDate =
+      new Date(
+        "2026-08-05T12:00:00-04:00"
+      ).getTime();
+
+    const daysElement =
+      document.getElementById("days");
+
+    const hoursElement =
+      document.getElementById("hours");
+
+    const minutesElement =
+      document.getElementById("minutes");
+
+    const secondsElement =
+      document.getElementById("seconds");
+
+    const countdownElement =
+      document.getElementById(
+        "launchCountdown"
+      );
+
+    const launchTimeElement =
+      document.getElementById("launchTime");
+
+    const launchMessage =
+      document.getElementById(
+        "launchMessage"
+      );
+
+    let countdownTimer = null;
+
+    function updateCountdown() {
+      const now = Date.now();
+      const distance = launchDate - now;
+
+      if (distance <= 0) {
+        if (countdownTimer) {
+          clearInterval(countdownTimer);
+        }
+
+        countdownElement.style.display =
+          "none";
+
+        launchTimeElement.style.display =
+          "none";
+
+        launchMessage.textContent =
+          "🌑 Eclipse SMP is now open!";
+
+        return;
+      }
+
+      const days =
+        Math.floor(
+          distance /
+          (1000 * 60 * 60 * 24)
+        );
+
+      const hours =
+        Math.floor(
+          (
+            distance %
+            (1000 * 60 * 60 * 24)
+          ) /
+          (1000 * 60 * 60)
+        );
+
+      const minutes =
+        Math.floor(
+          (
+            distance %
+            (1000 * 60 * 60)
+          ) /
+          (1000 * 60)
+        );
+
+      const seconds =
+        Math.floor(
+          (
+            distance %
+            (1000 * 60)
+          ) /
+          1000
+        );
+
+      daysElement.textContent =
+        String(days).padStart(2, "0");
+
+      hoursElement.textContent =
+        String(hours).padStart(2, "0");
+
+      minutesElement.textContent =
+        String(minutes).padStart(2, "0");
+
+      secondsElement.textContent =
+        String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+
+    countdownTimer =
+      setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
