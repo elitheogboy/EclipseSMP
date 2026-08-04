@@ -254,6 +254,7 @@
       margin-top: 14px;
 
       font-size: 0.95rem;
+
       color:
         rgba(255, 255, 255, 0.8);
     }
@@ -402,6 +403,154 @@
         rgba(255, 255, 255, 0.82);
     }
 
+    .offline-card {
+      border-color:
+        rgba(255, 170, 195, 0.45);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(91, 29, 65, 0.62),
+          rgba(15, 12, 29, 0.62)
+        );
+    }
+
+    .offline-card p {
+      max-width: 650px;
+      margin: 0 auto 20px;
+
+      font-size: 1.05rem;
+      line-height: 1.65;
+
+      color:
+        rgba(255, 255, 255, 0.86);
+    }
+
+    .offline-form {
+      width: 100%;
+      max-width: 520px;
+
+      margin: 0 auto;
+
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .offline-label {
+      font-family: "Cinzel", serif;
+      font-size: 0.88rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .offline-input {
+      width: 100%;
+      padding: 15px 18px;
+
+      font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+      font-size: 1.05rem;
+      color: #ffffff;
+
+      background:
+        rgba(15, 12, 29, 0.72);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.38);
+
+      outline: none;
+
+      transition:
+        border-color 0.3s,
+        box-shadow 0.3s;
+    }
+
+    .offline-input::placeholder {
+      color:
+        rgba(255, 255, 255, 0.56);
+    }
+
+    .offline-input:focus {
+      border-color:
+        rgba(235, 172, 255, 0.9);
+
+      box-shadow:
+        0 0 17px rgba(174, 87, 255, 0.25);
+    }
+
+    .notify-owner-btn {
+      width: 100%;
+      padding: 16px 24px;
+
+      font-family: "Cinzel", serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      color: #ffffff;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(176, 54, 105, 0.96),
+          rgba(104, 35, 89, 0.96)
+        );
+
+      border:
+        1px solid rgba(255, 190, 215, 0.72);
+
+      cursor: pointer;
+
+      box-shadow:
+        0 6px 20px rgba(0, 0, 0, 0.35);
+
+      transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        background 0.3s;
+    }
+
+    .notify-owner-btn:hover {
+      transform: translateY(-3px);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(201, 69, 125, 1),
+          rgba(130, 44, 110, 1)
+        );
+
+      box-shadow:
+        0 9px 26px rgba(0, 0, 0, 0.4);
+    }
+
+    .notify-owner-btn:disabled {
+      opacity: 0.62;
+      cursor: wait;
+      transform: none;
+    }
+
+    .notify-owner-status {
+      min-height: 24px;
+      margin: 0 !important;
+
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .notify-owner-status.success {
+      color: #9cffb5;
+    }
+
+    .notify-owner-status.error {
+      color: #ffb0b0;
+    }
+
     .about {
       margin: 35px 0 15px;
 
@@ -522,6 +671,7 @@
 
       .countdown {
         display: grid;
+
         grid-template-columns:
           repeat(2, minmax(0, 1fr));
       }
@@ -738,6 +888,52 @@
     </div>
   </section>
 
+  <section
+    class="section-card offline-card"
+  >
+    <h2>Server Not Online?</h2>
+
+    <p>
+      Don’t worry. Send the owner a quick alert
+      so the Eclipse SMP server can be checked
+      and started.
+    </p>
+
+    <div class="offline-form">
+
+      <label
+        for="offlineUsername"
+        class="offline-label"
+      >
+        Minecraft username (optional)
+      </label>
+
+      <input
+        type="text"
+        id="offlineUsername"
+        class="offline-input"
+        placeholder="Enter your Minecraft username"
+        maxlength="20"
+        autocomplete="off"
+      >
+
+      <button
+        type="button"
+        id="notifyOwnerButton"
+        class="notify-owner-btn"
+      >
+        🚨 Notify the Owner
+      </button>
+
+      <p
+        id="notifyOwnerStatus"
+        class="notify-owner-status"
+        aria-live="polite"
+      ></p>
+
+    </div>
+  </section>
+
   <section class="about">
     <h2>A Server</h2>
     <h2>Made By</h2>
@@ -797,16 +993,23 @@
   </footer>
 
   <script>
-    const appScriptUrl =
+    const counterScriptUrl =
       "https://script.google.com/macros/s/AKfycbw6pYnA0U0Srut2k_DyoscIc4qVbkgV3SOvGL2B4hFgq0FzVW_cuLmFzDVCU0GwFbuC/exec";
 
+    const alertScriptUrl =
+      "PASTE_ALERT_SCRIPT_URL_HERE";
+
     const notifyCount =
-      document.getElementById("notifyCount");
+      document.getElementById(
+        "notifyCount"
+      );
 
     async function loadNotifyCount() {
       try {
         const response = await fetch(
-          `${appScriptUrl}?action=count&time=${Date.now()}`
+          `${counterScriptUrl}` +
+          `?action=count` +
+          `&time=${Date.now()}`
         );
 
         if (!response.ok) {
@@ -815,13 +1018,15 @@
           );
         }
 
-        const data = await response.json();
+        const data =
+          await response.json();
 
         notifyCount.textContent =
           data.count ?? 0;
+
       } catch (error) {
         console.error(
-          "Could not load notified player count:",
+          "Could not load player count:",
           error
         );
 
@@ -855,7 +1060,9 @@
       );
 
     const launchTimeElement =
-      document.getElementById("launchTime");
+      document.getElementById(
+        "launchTime"
+      );
 
     const launchMessage =
       document.getElementById(
@@ -866,11 +1073,14 @@
 
     function updateCountdown() {
       const now = Date.now();
-      const distance = launchDate - now;
+      const distance =
+        launchDate - now;
 
       if (distance <= 0) {
         if (countdownTimer) {
-          clearInterval(countdownTimer);
+          clearInterval(
+            countdownTimer
+          );
         }
 
         countdownElement.style.display =
@@ -885,56 +1095,187 @@
         return;
       }
 
-      const days =
-        Math.floor(
-          distance /
+      const days = Math.floor(
+        distance /
+        (1000 * 60 * 60 * 24)
+      );
+
+      const hours = Math.floor(
+        (
+          distance %
           (1000 * 60 * 60 * 24)
-        );
+        ) /
+        (1000 * 60 * 60)
+      );
 
-      const hours =
-        Math.floor(
-          (
-            distance %
-            (1000 * 60 * 60 * 24)
-          ) /
+      const minutes = Math.floor(
+        (
+          distance %
           (1000 * 60 * 60)
-        );
+        ) /
+        (1000 * 60)
+      );
 
-      const minutes =
-        Math.floor(
-          (
-            distance %
-            (1000 * 60 * 60)
-          ) /
+      const seconds = Math.floor(
+        (
+          distance %
           (1000 * 60)
-        );
-
-      const seconds =
-        Math.floor(
-          (
-            distance %
-            (1000 * 60)
-          ) /
-          1000
-        );
+        ) /
+        1000
+      );
 
       daysElement.textContent =
-        String(days).padStart(2, "0");
+        String(days).padStart(
+          2,
+          "0"
+        );
 
       hoursElement.textContent =
-        String(hours).padStart(2, "0");
+        String(hours).padStart(
+          2,
+          "0"
+        );
 
       minutesElement.textContent =
-        String(minutes).padStart(2, "0");
+        String(minutes).padStart(
+          2,
+          "0"
+        );
 
       secondsElement.textContent =
-        String(seconds).padStart(2, "0");
+        String(seconds).padStart(
+          2,
+          "0"
+        );
     }
 
     updateCountdown();
 
     countdownTimer =
-      setInterval(updateCountdown, 1000);
+      setInterval(
+        updateCountdown,
+        1000
+      );
+
+    const notifyOwnerButton =
+      document.getElementById(
+        "notifyOwnerButton"
+      );
+
+    const offlineUsername =
+      document.getElementById(
+        "offlineUsername"
+      );
+
+    const notifyOwnerStatus =
+      document.getElementById(
+        "notifyOwnerStatus"
+      );
+
+    notifyOwnerButton.addEventListener(
+      "click",
+      async () => {
+        const username =
+          offlineUsername.value.trim();
+
+        notifyOwnerStatus.textContent =
+          "";
+
+        notifyOwnerStatus.className =
+          "notify-owner-status";
+
+        if (
+          username &&
+          !/^[A-Za-z0-9_ ]{3,20}$/.test(
+            username
+          )
+        ) {
+          notifyOwnerStatus.textContent =
+            "Please enter a valid Minecraft username.";
+
+          notifyOwnerStatus.classList.add(
+            "error"
+          );
+
+          return;
+        }
+
+        if (
+          alertScriptUrl ===
+          "https://script.google.com/macros/s/AKfycbzR9_B4AM7pnLPNG7EwoOq0fQ51phMXUDIB3O9QSZCWgUvIWYt6_o5hnTgzrUMi8UYC/exec"
+        ) {
+          notifyOwnerStatus.textContent =
+            "The alert service has not been connected yet.";
+
+          notifyOwnerStatus.classList.add(
+            "error"
+          );
+
+          return;
+        }
+
+        notifyOwnerButton.disabled = true;
+
+        notifyOwnerButton.textContent =
+          "Sending Alert...";
+
+        try {
+          const requestUrl =
+            `${alertScriptUrl}` +
+            `?action=notify` +
+            `&username=${
+              encodeURIComponent(username)
+            }` +
+            `&time=${Date.now()}`;
+
+          const response =
+            await fetch(requestUrl);
+
+          if (!response.ok) {
+            throw new Error(
+              `Alert failed: ${
+                response.status
+              }`
+            );
+          }
+
+          const result =
+            await response.json();
+
+          notifyOwnerStatus.textContent =
+            result.message ||
+            "Alert completed.";
+
+          if (result.success) {
+            notifyOwnerStatus.classList.add(
+              "success"
+            );
+
+            offlineUsername.value = "";
+          } else {
+            notifyOwnerStatus.classList.add(
+              "error"
+            );
+          }
+
+        } catch (error) {
+          console.error(error);
+
+          notifyOwnerStatus.textContent =
+            "The alert could not be sent. Please try again.";
+
+          notifyOwnerStatus.classList.add(
+            "error"
+          );
+
+        } finally {
+          notifyOwnerButton.disabled = false;
+
+          notifyOwnerButton.textContent =
+            "🚨 Notify the Owner";
+        }
+      }
+    );
   </script>
 
 </body>
