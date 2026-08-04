@@ -1200,20 +1200,6 @@
           return;
         }
 
-        if (
-          alertScriptUrl ===
-          "https://script.google.com/macros/s/AKfycbyooTo7Ssw0Zp3RWCwdVMyVYGlHcWHaj6IvVY3w3rk5nv10S2SH14Z3ra12OXfHElvH/exec"
-        ) {
-          notifyOwnerStatus.textContent =
-            "The alert service has not been connected yet.";
-
-          notifyOwnerStatus.classList.add(
-            "error"
-          );
-
-          return;
-        }
-
         notifyOwnerButton.disabled = true;
 
         notifyOwnerButton.textContent =
@@ -1239,20 +1225,24 @@
             );
           }
 
-const result =
-  await response.json();
-
-console.log(result);
-
-notifyOwnerStatus.textContent =
-  JSON.stringify(result);
+          const result =
+            await response.json();
 
           if (result.success) {
-           notifyOwnerStatus.textContent =
-  "The owner has been notified. Please wait.";
+            notifyOwnerStatus.textContent =
+              result.message ||
+              "The owner has been notified. Please wait.";
+
+            notifyOwnerStatus.classList.add(
+              "success"
+            );
 
             offlineUsername.value = "";
           } else {
+            notifyOwnerStatus.textContent =
+              result.message ||
+              "The alert could not be sent.";
+
             notifyOwnerStatus.classList.add(
               "error"
             );
