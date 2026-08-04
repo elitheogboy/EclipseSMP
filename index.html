@@ -1247,9 +1247,8 @@
             "Alert completed.";
 
           if (result.success) {
-            notifyOwnerStatus.classList.add(
-              "success, Please Wait"
-            );
+           notifyOwnerStatus.textContent =
+  "The owner has been notified. Please wait.";
 
             offlineUsername.value = "";
           } else {
