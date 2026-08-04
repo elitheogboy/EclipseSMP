@@ -1239,12 +1239,13 @@
             );
           }
 
-          const result =
-            await response.json();
+const result =
+  await response.json();
 
-          notifyOwnerStatus.textContent =
-            result.message ||
-            "Alert completed.";
+console.log(result);
+
+notifyOwnerStatus.textContent =
+  JSON.stringify(result);
 
           if (result.success) {
            notifyOwnerStatus.textContent =
