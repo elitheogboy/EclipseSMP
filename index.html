@@ -204,4 +204,491 @@
     .section-card h2 {
       margin-bottom: 24px;
 
-      font-family
+      font-family: "Cinzel", serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .section-intro {
+      max-width: 700px;
+      margin: -8px auto 24px;
+
+      font-size: 1.08rem;
+      line-height: 1.7;
+
+      color:
+        rgba(255, 255, 255, 0.88);
+    }
+
+    .feature-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+      text-align: left;
+    }
+
+    .feature-item {
+      padding: 15px 18px;
+
+      font-size: 1.08rem;
+      line-height: 1.5;
+
+      background:
+        rgba(255, 255, 255, 0.08);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.18);
+
+      transition:
+        transform 0.3s,
+        background 0.3s,
+        border-color 0.3s;
+    }
+
+    .feature-item:hover {
+      transform: translateY(-2px);
+
+      background:
+        rgba(255, 255, 255, 0.13);
+
+      border-color:
+        rgba(255, 255, 255, 0.35);
+    }
+
+    .upcoming {
+      display: inline-block;
+
+      margin-left: 6px;
+      padding: 2px 8px;
+
+      font-family: "Cinzel", serif;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      color: #ead6ff;
+
+      background:
+        rgba(142, 69, 211, 0.38);
+
+      border:
+        1px solid rgba(217, 174, 255, 0.45);
+    }
+
+    .launch-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+      gap: 14px;
+    }
+
+    .launch-item {
+      padding: 20px 16px;
+
+      background:
+        rgba(255, 255, 255, 0.08);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .launch-item strong {
+      display: block;
+      margin-bottom: 8px;
+
+      font-family: "Cinzel", serif;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .launch-item p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+
+      color:
+        rgba(255, 255, 255, 0.82);
+    }
+
+    .about {
+      margin: 35px 0 15px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .about h2 {
+      font-family: "Cinzel", serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 1.4;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .notify-count {
+      margin: 10px 0 30px;
+      padding: 12px 24px;
+
+      font-size: 1.15rem;
+      letter-spacing: 1px;
+
+      background:
+        rgba(255, 255, 255, 0.12);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.3);
+
+      backdrop-filter: blur(8px);
+
+      box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .notify-count span {
+      margin-left: 5px;
+
+      font-family: "Cinzel", serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+
+      margin-top: 10px;
+    }
+
+    .social-icon {
+      width: 42px;
+      height: 42px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #ffffff;
+      text-decoration: none;
+
+      border:
+        1px solid rgba(255, 255, 255, 0.4);
+
+      transition:
+        background 0.3s,
+        border-color 0.3s,
+        transform 0.3s;
+    }
+
+    .social-icon:hover {
+      background:
+        rgba(255, 255, 255, 0.15);
+
+      border-color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 35px 15px;
+        background-attachment: scroll;
+      }
+
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+
+      .hero-tagline {
+        font-size: 1.05rem;
+      }
+
+      .header h2 {
+        font-size: 1.4rem;
+      }
+
+      .button-group {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .main-btn {
+        width: 100%;
+        max-width: 290px;
+        min-width: 0;
+
+        padding: 14px 24px;
+        font-size: 1.08rem;
+      }
+
+      .section-card {
+        padding: 26px 16px;
+      }
+
+      .section-card h2 {
+        font-size: 1.4rem;
+      }
+
+      .feature-grid,
+      .launch-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-item {
+        text-align: center;
+        font-size: 1rem;
+      }
+
+      .upcoming {
+        display: block;
+        width: fit-content;
+
+        margin: 7px auto 0;
+      }
+
+      .about h2 {
+        font-size: 1.1rem;
+      }
+
+      .notify-count {
+        padding: 10px 18px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="header">
+    <h2>
+      Minecraft<br>
+      Bedrock
+    </h2>
+  </header>
+
+  <main class="hero">
+    <h1>
+      Eclipse SMP<br>
+      Coming August 5th.
+    </h1>
+
+    <p class="hero-tagline">
+      Build, explore, survive and sign up to be
+      notified when Eclipse SMP officially opens.
+    </p>
+
+    <div class="button-group">
+
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSeMktGZEQY0vDP-XKIlVc9_565DFe7NSVZY7f_Qeys9BbvAFQ/viewform?usp=publish-editor"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="main-btn subscribe-btn"
+      >
+        Join the Waitlist
+      </a>
+
+      <a
+        href="https://youtu.be/XDLFSwYUzhQ"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="main-btn trailer-btn"
+      >
+        <span class="play-icon">▶</span>
+        Watch the Trailer
+      </a>
+
+    </div>
+  </main>
+
+  <section class="section-card">
+    <h2>Why Join Eclipse SMP?</h2>
+
+    <div class="feature-grid">
+
+      <div class="feature-item">
+        🌑 Dynamic Eclipse Events
+        <span class="upcoming">Upcoming</span>
+      </div>
+
+      <div class="feature-item">
+        👑 Custom Bosses
+        <span class="upcoming">Upcoming</span>
+      </div>
+
+      <div class="feature-item">
+        🧭 Personal Waypoints
+      </div>
+
+      <div class="feature-item">
+        ⚔️ Custom Progression
+      </div>
+
+      <div class="feature-item">
+        🎵 Boss Music
+        <span class="upcoming">Upcoming</span>
+      </div>
+
+      <div class="feature-item">
+        👥 Friendly Community
+      </div>
+
+      <div class="feature-item">
+        📅 Weekly Updates
+      </div>
+
+      <div class="feature-item">
+        🛡️ Optional Safe Mode
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section-card">
+    <h2>Launch Day</h2>
+
+    <p class="section-intro">
+      Join us on August 5th and help begin the
+      first chapter of Eclipse SMP.
+    </p>
+
+    <div class="launch-grid">
+
+      <div class="launch-item">
+        <strong>🏗️ Build Together</strong>
+
+        <p>
+          Claim land, create bases and help build
+          the first community areas.
+        </p>
+      </div>
+
+      <div class="launch-item">
+        <strong>🗺️ Explore</strong>
+
+        <p>
+          Discover the world, locate resources
+          and save your own waypoints.
+        </p>
+      </div>
+
+      <div class="launch-item">
+        <strong>📢 Be There First</strong>
+
+        <p>
+          Join the opening community before
+          future bosses and events arrive.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>A Server</h2>
+    <h2>Made By</h2>
+    <h2>Eli &amp; Leah</h2>
+  </section>
+
+  <p class="notify-count">
+    Players Notified:
+
+    <span id="notifyCount">
+      Loading...
+    </span>
+  </p>
+
+  <footer class="social-links">
+
+    <a
+      href="https://x.com/i/status/2084249463279742983"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      aria-label="X"
+    >
+      X
+    </a>
+
+    <a
+      href="https://www.tiktok.com/@developer_eli?_r=1&_t=ZP-98Zi4W31i9P"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      aria-label="TikTok"
+    >
+      ♪
+    </a>
+
+    <a
+      href="https://www.instagram.com/p/Dbk_sOMTgyC/?igsh=Y2xnZWc5ZmFuejl4"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      aria-label="Instagram"
+    >
+      ◎
+    </a>
+
+    <a
+      href="https://youtube.com/@itseli1?si=ac8kkbqfsz8q6LYs"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      aria-label="YouTube"
+    >
+      ▶
+    </a>
+
+  </footer>
+
+  <script>
+    const appScriptUrl =
+      "https://script.google.com/macros/s/AKfycbw6pYnA0U0Srut2k_DyoscIc4qVbkgV3SOvGL2B4hFgq0FzVW_cuLmFzDVCU0GwFbuC/exec";
+
+    const notifyCount =
+      document.getElementById("notifyCount");
+
+    async function loadNotifyCount() {
+      try {
+        const response = await fetch(
+          `${appScriptUrl}?action=count&time=${Date.now()}`
+        );
+
+        if (!response.ok) {
+          throw new Error(
+            `Count failed: ${response.status}`
+          );
+        }
+
+        const data = await response.json();
+
+        notifyCount.textContent =
+          data.count ?? 0;
+      } catch (error) {
+        console.error(
+          "Could not load notified player count:",
+          error
+        );
+
+        notifyCount.textContent =
+          "Unavailable";
+      }
+    }
+
+    loadNotifyCount();
+  </script>
+
+</body>
+</html>
