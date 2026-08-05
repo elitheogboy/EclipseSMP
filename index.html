@@ -1259,7 +1259,7 @@
       "https://script.google.com/macros/s/AKfycbw6pYnA0U0Srut2k_DyoscIc4qVbkgV3SOvGL2B4hFgq0FzVW_cuLmFzDVCU0GwFbuC/exec";
 
     const alertScriptUrl =
-      "https://script.google.com/macros/s/AKfycbyooTo7Ssw0Zp3RWCwdVMyVYGlHcWHaj6IvVY3w3rk5nv10S2SH14Z3ra12OXfHElvH/exec";
+      "https://script.google.com/macros/s/AKfycbyGRQhVW4oqEm2fkbd2ottYl_P2HeGT2k9cYXYaL92iBUj2g0TqXoltZE8igI7c99zL-g/exec";
 
     const notifyCount =
       document.getElementById(
@@ -1506,10 +1506,12 @@ const notifyOwnerButton =
           const result =
             await response.json();
 
-          if (result.success) {
+          if (
+            result.success === true &&
+            typeof result.message === "string"
+          ) {
             notifyOwnerStatus.textContent =
-              result.message ||
-              "The owner has been notified. Please wait.";
+              result.message;
 
             notifyOwnerStatus.classList.add(
               "success"
@@ -1517,9 +1519,14 @@ const notifyOwnerButton =
 
             offlineUsername.value = "";
           } else {
+            console.error(
+              "Unexpected alert response:",
+              result
+            );
+
             notifyOwnerStatus.textContent =
               result.message ||
-              "The alert could not be sent.";
+              "The alert service returned the wrong response.";
 
             notifyOwnerStatus.classList.add(
               "error"
