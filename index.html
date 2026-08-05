@@ -396,6 +396,63 @@
       color: #d9b7ff;
     }
 
+    .event-card {
+      border-color: rgba(255, 213, 107, 0.58);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(102, 67, 18, 0.72),
+          rgba(15, 12, 29, 0.68)
+        );
+      box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.34),
+        0 0 28px rgba(255, 209, 92, 0.16);
+    }
+
+    .event-badge {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 7px 14px;
+      font-family: "Cinzel", serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff2bd;
+      background: rgba(160, 112, 25, 0.32);
+      border: 1px solid rgba(255, 221, 131, 0.58);
+    }
+
+    .event-details-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 760px;
+      margin: 0 auto 18px;
+    }
+
+    .event-detail {
+      padding: 18px 14px;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .event-detail small {
+      display: block;
+      margin-bottom: 8px;
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .event-detail strong {
+      display: block;
+      font-size: 1.05rem;
+      line-height: 1.4;
+    }
+
     .section-card {
       width: 100%;
       max-width: 900px;
@@ -920,7 +977,8 @@
 
       .feature-grid,
       .launch-grid,
-      .server-details-grid {
+      .server-details-grid,
+      .event-details-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1026,6 +1084,39 @@
       </p>
     </section>
   </main>
+
+  <section class="section-card event-card" id="talent-show">
+    <span class="event-badge">Upcoming Event</span>
+
+    <h2>🎤 Eclipse SMP Talent Show</h2>
+
+    <p class="section-intro">
+      Friends are hosting a talent show on Eclipse SMP.
+      Show everyone what you can do—any type of talent is welcome!
+    </p>
+
+    <div class="event-details-grid">
+      <div class="event-detail">
+        <small>📅 Date</small>
+        <strong>August 7, 2026</strong>
+      </div>
+
+      <div class="event-detail">
+        <small>🕒 Time</small>
+        <strong>2:00 PM (After Lunch)</strong>
+      </div>
+
+      <div class="event-detail">
+        <small>🌟 Talent Type</small>
+        <strong>Anything</strong>
+      </div>
+    </div>
+
+    <p class="section-intro">
+      Singing, jokes, builds, tricks, music, stories, performances
+      and other creative talents are all allowed.
+    </p>
+  </section>
 
   <section class="section-card">
     <h2>Why Join Eclipse SMP?</h2>
