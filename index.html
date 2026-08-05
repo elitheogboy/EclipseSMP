@@ -184,6 +184,134 @@
       margin-right: 8px;
     }
 
+
+    .online-title {
+      color: #86ff9a;
+      text-shadow:
+        0 0 10px rgba(134, 255, 154, 0.55),
+        0 0 28px rgba(57, 220, 100, 0.4);
+    }
+
+    .live-status-card {
+      width: 100%;
+      max-width: 720px;
+      margin-top: 4px;
+      padding: 28px 22px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(16, 55, 34, 0.68),
+          rgba(15, 12, 29, 0.72)
+        );
+
+      border:
+        1px solid rgba(148, 255, 178, 0.42);
+
+      backdrop-filter: blur(10px);
+
+      box-shadow:
+        0 8px 28px rgba(0, 0, 0, 0.34),
+        0 0 30px rgba(77, 224, 118, 0.14);
+    }
+
+    .live-status-card h2 {
+      margin-bottom: 17px;
+
+      font-family: "Cinzel", serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .live-status-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      margin-bottom: 22px;
+      padding: 9px 20px;
+
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+
+      font-family: "Cinzel", serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .live-status-badge.online {
+      color: #d8ffe1;
+      background: rgba(32, 137, 65, 0.72);
+      border-color: rgba(151, 255, 180, 0.62);
+    }
+
+    .live-status-badge.offline {
+      color: #ffe1e1;
+      background: rgba(153, 39, 55, 0.72);
+      border-color: rgba(255, 164, 174, 0.62);
+    }
+
+    .live-status-badge.checking {
+      color: #fff4cc;
+      background: rgba(145, 111, 30, 0.65);
+      border-color: rgba(255, 221, 133, 0.55);
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+
+      display: inline-block;
+      border-radius: 50%;
+
+      background: currentColor;
+      box-shadow: 0 0 11px currentColor;
+    }
+
+    .live-status-grid {
+      display: grid;
+      grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .live-status-item {
+      min-width: 0;
+      padding: 18px 14px;
+
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .live-status-label {
+      display: block;
+      margin-bottom: 9px;
+
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .live-status-item strong {
+      display: block;
+
+      font-family: "Cinzel", serif;
+      font-size: 1rem;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    .status-updated {
+      margin-top: 17px;
+
+      font-size: 0.86rem;
+      color: rgba(255, 255, 255, 0.68);
+    }
+
     .countdown-box {
       width: 100%;
       max-width: 650px;
@@ -401,6 +529,100 @@
 
       color:
         rgba(255, 255, 255, 0.82);
+    }
+
+    .server-card {
+      border-color: rgba(180, 126, 255, 0.55);
+      background: linear-gradient(135deg, rgba(67, 31, 112, 0.72), rgba(15, 12, 29, 0.68));
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.36), 0 0 30px rgba(147, 82, 225, 0.16);
+    }
+
+    .server-status-badge {
+      display: inline-block;
+      margin-bottom: 16px;
+      padding: 7px 14px;
+      font-family: "Cinzel", serif;
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #b9ffcb;
+      background: rgba(46, 146, 82, 0.24);
+      border: 1px solid rgba(145, 255, 177, 0.48);
+    }
+
+    .server-details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      max-width: 700px;
+      margin: 0 auto 18px;
+    }
+
+    .server-detail {
+      padding: 18px 16px;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+    }
+
+    .server-detail small {
+      display: block;
+      margin-bottom: 8px;
+      font-family: "Cinzel", serif;
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .server-detail strong {
+      display: block;
+      font-size: 1.08rem;
+      overflow-wrap: anywhere;
+    }
+
+    .server-button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .server-action-btn {
+      min-width: 210px;
+      padding: 14px 22px;
+      font-family: "Cinzel", serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #ffffff;
+      text-decoration: none;
+      cursor: pointer;
+      background: rgba(116, 61, 170, 0.9);
+      border: 1px solid rgba(224, 197, 255, 0.7);
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.32);
+      transition: transform 0.25s, background 0.25s;
+    }
+
+    .server-action-btn:hover {
+      transform: translateY(-2px);
+      background: rgba(148, 79, 211, 0.98);
+    }
+
+    .server-action-btn.primary {
+      color: #111111;
+      background: #ffffff;
+      border-color: #ffffff;
+    }
+
+    .server-action-btn.primary:hover {
+      background: #eeeeee;
+    }
+
+    .copy-status {
+      min-height: 24px;
+      margin-top: 14px;
+      color: #9cffb5;
     }
 
     .offline-card {
@@ -665,6 +887,14 @@
         font-size: 1.08rem;
       }
 
+      .live-status-card {
+        padding: 24px 15px;
+      }
+
+      .live-status-grid {
+        grid-template-columns: 1fr;
+      }
+
       .countdown-box {
         padding: 20px 14px;
       }
@@ -689,8 +919,14 @@
       }
 
       .feature-grid,
-      .launch-grid {
+      .launch-grid,
+      .server-details-grid {
         grid-template-columns: 1fr;
+      }
+
+      .server-action-btn {
+        width: 100%;
+        max-width: 320px;
       }
 
       .feature-item {
@@ -729,23 +965,23 @@
   <main class="hero">
     <h1>
       Eclipse SMP<br>
-      Coming August 5th.
+      <span class="online-title">IS NOW ONLINE!!</span>
     </h1>
 
     <p class="hero-tagline">
-      Build, explore, survive and sign up to be
-      notified when Eclipse SMP officially opens.
+      Eclipse SMP is open now. Join the Bedrock survival adventure,
+      build your base, explore the world and help shape the server.
     </p>
 
     <div class="button-group">
 
       <a
-        href="https://docs.google.com/forms/d/e/1FAIpQLSeMktGZEQY0vDP-XKIlVc9_565DFe7NSVZY7f_Qeys9BbvAFQ/viewform?usp=publish-editor"
+        href="https://add.aternos.org/EclipseSMP-FmAB"
         target="_blank"
         rel="noopener noreferrer"
         class="main-btn subscribe-btn"
       >
-        Join the Waitlist
+        🎮 Join
       </a>
 
       <a
@@ -760,48 +996,35 @@
 
     </div>
 
-    <div class="countdown-box">
-      <p class="countdown-title">
-        Eclipse SMP launches in:
-      </p>
+    <section class="live-status-card" aria-labelledby="serverStatusTitle">
+      <h2 id="serverStatusTitle">SERVER STATUS</h2>
 
-      <div
-        id="launchCountdown"
-        class="countdown"
-      >
-        <div class="countdown-unit">
-          <span id="days">00</span>
-          <small>Days</small>
+      <div id="statusBadge" class="live-status-badge checking">
+        <span class="status-dot"></span>
+        <span id="statusText">Checking...</span>
+      </div>
+
+      <div class="live-status-grid">
+        <div class="live-status-item">
+          <span class="live-status-label">👥 Players Online</span>
+          <strong id="livePlayerCount">0 / 1000</strong>
         </div>
 
-        <div class="countdown-unit">
-          <span id="hours">00</span>
-          <small>Hours</small>
+        <div class="live-status-item">
+          <span class="live-status-label">🌍 Address</span>
+          <strong>EclipseSMP-FmAB.aternos.me</strong>
         </div>
 
-        <div class="countdown-unit">
-          <span id="minutes">00</span>
-          <small>Minutes</small>
-        </div>
-
-        <div class="countdown-unit">
-          <span id="seconds">00</span>
-          <small>Seconds</small>
+        <div class="live-status-item">
+          <span class="live-status-label">🔌 Port</span>
+          <strong>30283</strong>
         </div>
       </div>
 
-      <p
-        id="launchTime"
-        class="launch-time"
-      >
-        August 5, 2026 at 12:00 PM Eastern Time
+      <p id="statusUpdated" class="status-updated">
+        Connecting to the server status service...
       </p>
-
-      <p
-        id="launchMessage"
-        class="launch-message"
-      ></p>
-    </div>
+    </section>
   </main>
 
   <section class="section-card">
@@ -847,13 +1070,52 @@
     </div>
   </section>
 
-  <section class="section-card">
-    <h2>Launch Day</h2>
+  <section class="section-card server-card" id="join">
+    <span class="server-status-badge">Bedrock Server</span>
+
+    <h2>Join Eclipse SMP</h2>
 
     <p class="section-intro">
-      Join us on August 5th at 12:00 PM Eastern
-      Time and help begin the first chapter of
-      Eclipse SMP.
+      Eclipse SMP is now open. Minecraft Bedrock players can join
+      using the address and port below.
+    </p>
+
+    <div class="server-details-grid">
+      <div class="server-detail">
+        <small>Server Address</small>
+        <strong id="serverAddress">EclipseSMP-FmAB.aternos.me</strong>
+      </div>
+
+      <div class="server-detail">
+        <small>Port</small>
+        <strong id="serverPort">30283</strong>
+      </div>
+    </div>
+
+    <div class="server-button-group">
+      <a
+        href="https://add.aternos.org/EclipseSMP-FmAB"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="server-action-btn primary"
+      >
+        🎮 Direct Join
+      </a>
+
+      <button type="button" id="copyServerButton" class="server-action-btn">
+        📋 Copy Server Details
+      </button>
+    </div>
+
+    <p id="copyServerStatus" class="copy-status" aria-live="polite"></p>
+  </section>
+
+  <section class="section-card">
+    <h2>Now Open</h2>
+
+    <p class="section-intro">
+      The first chapter of Eclipse SMP has begun. Join now,
+      meet the community and start building your place in the world.
     </p>
 
     <div class="launch-grid">
@@ -997,7 +1259,7 @@
       "https://script.google.com/macros/s/AKfycbw6pYnA0U0Srut2k_DyoscIc4qVbkgV3SOvGL2B4hFgq0FzVW_cuLmFzDVCU0GwFbuC/exec";
 
     const alertScriptUrl =
-      "https://script.google.com/macros/s/AKfycbyGRQhVW4oqEm2fkbd2ottYl_P2HeGT2k9cYXYaL92iBUj2g0TqXoltZE8igI7c99zL-g/exec";
+      "https://script.google.com/macros/s/AKfycbyooTo7Ssw0Zp3RWCwdVMyVYGlHcWHaj6IvVY3w3rk5nv10S2SH14Z3ra12OXfHElvH/exec";
 
     const notifyCount =
       document.getElementById(
@@ -1037,127 +1299,143 @@
 
     loadNotifyCount();
 
-    const launchDate =
-      new Date(
-        "2026-08-05T12:00:00-04:00"
-      ).getTime();
+    const copyServerButton =
+      document.getElementById("copyServerButton");
 
-    const daysElement =
-      document.getElementById("days");
+    const copyServerStatus =
+      document.getElementById("copyServerStatus");
 
-    const hoursElement =
-      document.getElementById("hours");
+    copyServerButton.addEventListener("click", async () => {
+      const serverDetails =
+        "Eclipse SMP\n" +
+        "Address: EclipseSMP-FmAB.aternos.me\n" +
+        "Port: 30283\n" +
+        "Direct Join: https://add.aternos.org/EclipseSMP-FmAB";
 
-    const minutesElement =
-      document.getElementById("minutes");
+      try {
+        await navigator.clipboard.writeText(serverDetails);
+        copyServerStatus.textContent =
+          "Server details copied!";
+      } catch (error) {
+        console.error(error);
+        copyServerStatus.textContent =
+          "Address: EclipseSMP-FmAB.aternos.me | Port: 30283";
+      }
+    });
 
-    const secondsElement =
-      document.getElementById("seconds");
+    const serverHost =
+      "EclipseSMP-FmAB.aternos.me";
 
-    const countdownElement =
+    const serverPort = "30283";
+
+    const statusApiUrl =
+      "https://api.mcstatus.io/v2/status/bedrock/" +
+      encodeURIComponent(
+        `${serverHost}:${serverPort}`
+      ) +
+      "?timeout=5";
+
+    const statusBadge =
+      document.getElementById("statusBadge");
+
+    const statusText =
+      document.getElementById("statusText");
+
+    const livePlayerCount =
       document.getElementById(
-        "launchCountdown"
+        "livePlayerCount"
       );
 
-    const launchTimeElement =
+    const statusUpdated =
       document.getElementById(
-        "launchTime"
+        "statusUpdated"
       );
 
-    const launchMessage =
-      document.getElementById(
-        "launchMessage"
-      );
+    async function loadServerStatus() {
+      statusBadge.className =
+        "live-status-badge checking";
 
-    let countdownTimer = null;
+      statusText.textContent =
+        "Checking...";
 
-    function updateCountdown() {
-      const now = Date.now();
-      const distance =
-        launchDate - now;
+      try {
+        const response = await fetch(
+          `${statusApiUrl}&time=${Date.now()}`
+        );
 
-      if (distance <= 0) {
-        if (countdownTimer) {
-          clearInterval(
-            countdownTimer
+        if (!response.ok) {
+          throw new Error(
+            `Status request failed: ${response.status}`
           );
         }
 
-        countdownElement.style.display =
-          "none";
+        const data = await response.json();
 
-        launchTimeElement.style.display =
-          "none";
+        if (data.online) {
+          const onlinePlayers =
+            Number.isFinite(data.players?.online)
+              ? data.players.online
+              : 0;
 
-        launchMessage.textContent =
-          "🌑 Eclipse SMP is now open!";
+          const maxPlayers = 1000;
 
-        return;
+          statusBadge.className =
+            "live-status-badge online";
+
+          statusText.textContent =
+            "Online";
+
+          livePlayerCount.textContent =
+            `${onlinePlayers} / ${maxPlayers}`;
+        } else {
+          statusBadge.className =
+            "live-status-badge offline";
+
+          statusText.textContent =
+            "Offline";
+
+          livePlayerCount.textContent =
+            "0 / 1000";
+        }
+
+        statusUpdated.textContent =
+          "Last checked: " +
+          new Date().toLocaleTimeString(
+            [],
+            {
+              hour: "numeric",
+              minute: "2-digit"
+            }
+          );
+
+      } catch (error) {
+        console.error(
+          "Could not load server status:",
+          error
+        );
+
+        statusBadge.className =
+          "live-status-badge offline";
+
+        statusText.textContent =
+          "Status Unavailable";
+
+        livePlayerCount.textContent =
+          "0 / 1000";
+
+        statusUpdated.textContent =
+          "The live status service could not be reached.";
       }
-
-      const days = Math.floor(
-        distance /
-        (1000 * 60 * 60 * 24)
-      );
-
-      const hours = Math.floor(
-        (
-          distance %
-          (1000 * 60 * 60 * 24)
-        ) /
-        (1000 * 60 * 60)
-      );
-
-      const minutes = Math.floor(
-        (
-          distance %
-          (1000 * 60 * 60)
-        ) /
-        (1000 * 60)
-      );
-
-      const seconds = Math.floor(
-        (
-          distance %
-          (1000 * 60)
-        ) /
-        1000
-      );
-
-      daysElement.textContent =
-        String(days).padStart(
-          2,
-          "0"
-        );
-
-      hoursElement.textContent =
-        String(hours).padStart(
-          2,
-          "0"
-        );
-
-      minutesElement.textContent =
-        String(minutes).padStart(
-          2,
-          "0"
-        );
-
-      secondsElement.textContent =
-        String(seconds).padStart(
-          2,
-          "0"
-        );
     }
 
-    updateCountdown();
+    loadServerStatus();
 
-    countdownTimer =
-      setInterval(
-        updateCountdown,
-        1000
-      );
+    setInterval(
+      loadServerStatus,
+      60000
+    );
 
-    const notifyOwnerButton =
+const notifyOwnerButton =
       document.getElementById(
         "notifyOwnerButton"
       );
