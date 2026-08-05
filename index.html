@@ -1329,11 +1329,10 @@
     const serverPort = "30283";
 
     const statusApiUrl =
-      "https://api.mcstatus.io/v2/status/bedrock/" +
+      "https://api.mcsrvstat.us/bedrock/3/" +
       encodeURIComponent(
         `${serverHost}:${serverPort}`
-      ) +
-      "?timeout=5";
+      );
 
     const statusBadge =
       document.getElementById("statusBadge");
@@ -1373,9 +1372,7 @@
 
         if (data.online) {
           const onlinePlayers =
-            Number.isFinite(data.players?.online)
-              ? data.players.online
-              : 0;
+            data.players?.online ?? 0;
 
           const maxPlayers = 1000;
 
