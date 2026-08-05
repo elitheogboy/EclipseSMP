@@ -1441,16 +1441,21 @@
         "statusUpdated"
       );
 
+    // Aternos can be online even when public status APIs cannot detect it.
+    // Keep the website status online while still loading the real player
+    // count whenever the public API responds successfully.
+    const forceServerOnline = true;
+
     async function loadServerStatus() {
       statusBadge.className =
-        "live-status-badge checking";
+        "live-status-badge online";
 
       statusText.textContent =
-        "Checking...";
+        "Online";
 
       try {
         const response = await fetch(
-          `${statusApiUrl}&time=${Date.now()}`
+          `${statusApiUrl}?time=${Date.now()}`
         );
 
         if (!response.ok) {
@@ -1461,58 +1466,35 @@
 
         const data = await response.json();
 
-        if (data.online) {
-          const onlinePlayers =
-            data.players?.online ?? 0;
+        const onlinePlayers =
+          data.players?.online ?? 0;
 
-          const maxPlayers = 1000;
-
-          statusBadge.className =
-            "live-status-badge online";
-
-          statusText.textContent =
-            "Online";
-
-          livePlayerCount.textContent =
-            `${onlinePlayers} / ${maxPlayers}`;
-        } else {
-          statusBadge.className =
-            "live-status-badge offline";
-
-          statusText.textContent =
-            "Offline";
-
-          livePlayerCount.textContent =
-            "0 / 1000";
-        }
+        livePlayerCount.textContent =
+          `${onlinePlayers} / 1000`;
 
         statusUpdated.textContent =
-          "Last checked: " +
-          new Date().toLocaleTimeString(
-            [],
-            {
-              hour: "numeric",
-              minute: "2-digit"
-            }
-          );
+          data.online === true
+            ? "Live player count updated: " +
+              new Date().toLocaleTimeString(
+                [],
+                {
+                  hour: "numeric",
+                  minute: "2-digit"
+                }
+              )
+            : "Server marked online — player count service is still updating.";
 
       } catch (error) {
         console.error(
-          "Could not load server status:",
+          "Could not load player count:",
           error
         );
-
-        statusBadge.className =
-          "live-status-badge offline";
-
-        statusText.textContent =
-          "Status Unavailable";
 
         livePlayerCount.textContent =
           "0 / 1000";
 
         statusUpdated.textContent =
-          "The live status service could not be reached.";
+          "Server marked online — live player count is temporarily unavailable.";
       }
     }
 
